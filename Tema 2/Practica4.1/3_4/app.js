@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(){
-    const displayEl = document.getElementById("main")
+    //elemento del DOM donde vamos a representar la información
+    const displayEl = document.getElementById("display")
 
     //clase coche
     class Coche{
@@ -49,11 +50,12 @@ document.addEventListener('DOMContentLoaded',function(){
         }
     }
 
-    const listaCoches = [new Coche("Ford","Kuga",37500,2020,"url")
-    ,new Coche("Audi","A1",35875,2018,"url")
-    ,new Coche("Kia","Sportage",47557,2019,"url")
-    ,new Coche("Kia","Ceed",21200,2021,"url")
-    ,new Coche("Peugeot","e208",31760,2022,"url")
+    //definición del array con los objetos
+    const listaCoches = [new Coche("Ford","Kuga",37500,2020,"kuga.webp")
+    ,new Coche("Audi","A1",35875,2018,"audi.webp")
+    ,new Coche("Kia","Sportage",47557,2019,"kiasport.webp")
+    ,new Coche("Kia","Ceed",21200,2021,"kiaceed.webp")
+    ,new Coche("Peugeot","e208",31760,2022,"peugeot.jpg")
     ]
 
     //recorrer cada atributo de cada objeto
@@ -61,14 +63,22 @@ document.addEventListener('DOMContentLoaded',function(){
     //     Object.keys(listaCoches[index]).forEach(e => console.log(listaCoches[index][e]))
     // })
 
-    //Usando un "toString"
-    listaCoches.forEach((value,index)=>{
-        console.log("Coche n",index+1,"\n",listaCoches[index].getInfo())
-    })
-
     function pintaCoches(c){
-        displayEl.innerHTML += '<div class="card" style="width: 18rem;"><img class="card-img-top" src=','"',c.getUrl(),'" ','alt="Foto del coche"><div class="card-body"><h5 class="card-title">',c.getMarca(), " ",c.getModelo(),'</h5><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p> <a href="#" class="btn btn-primary">Go somewhere</a></div></div>'
+        displayEl.innerHTML += 
+        '<div class="col">'+
+            '<div class="card" style="width: 18rem;">'+
+                '<img class="card-img-top" src="./img/'+c.getUrl()+'" alt="Foto del coche">'+
+                    '<div class="card-body">'+
+                        '<h5 class="card-title">'+c.getMarca()+ " "+c.getModelo()+'</h5>'+
+                            '<p class="card-text">Precio: '+c.getPrecio()+"€"+'<br/>Año de matriculación: '+c.getAnyoMatriculacion()+'</p> '+
+                                '<a target="_blank" href="./img/'+c.getUrl()+'" class="btn btn-primary">Ver foto</a>'+
+                    '</div>'+
+            '</div>'+
+        '</div>'
     }
 
-    pintaCoches(listaCoches[0])
+    listaCoches.forEach((value,index)=>{
+        pintaCoches(listaCoches[index])
+        console.log("Coche n",index+1,"\n",listaCoches[index].getInfo()) //muestra la info por consola
+    })
 })
