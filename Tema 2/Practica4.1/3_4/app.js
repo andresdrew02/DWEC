@@ -58,10 +58,12 @@ document.addEventListener('DOMContentLoaded',function(){
     ,new Coche("Peugeot","e208",31760,2022,"peugeot.jpg")
     ]
 
-    //recorrer cada atributo de cada objeto
-    // listaCoches.forEach((value,index)=>{
-    //     Object.keys(listaCoches[index]).forEach(e => console.log(listaCoches[index][e]))
-    // })
+    /*recorrer cada atributo de cada objeto
+        listaCoches.forEach((value,index)=>{
+            Object.keys(listaCoches[index]).forEach(e => console.log(listaCoches[index][e]))
+        })
+    */  
+
 
     function pintaCoches(c){
         displayEl.innerHTML += 
