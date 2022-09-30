@@ -24,16 +24,30 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     //for in loop & foreach loop & for of loop
 
-    //recorrer array tridimensional
-    document.write('<table border="1">')
-    for(i=0;i<array.length;i++){
-        document.write('<tr>')
-        document.write("<td><b>Estado "+i+ "</b></td>")
-        for(j=0;j<array[i].length;j++){
-            document.write("<td>"+ array[i][j] + "</td>")
-        }
-        document.write("</tr>")
+    array.forEach((elemento,indice,valor)=>{
+        console.log(`${indice} : ${elemento}`)
+    })
+
+    const cadena = "HOLA MUNDO"
+    
+    for(l of cadena){
+        console.log(l)
     }
-    document.write("</table>")
+
+    //recorrer array tridimensional
+    // document.write('<table border="1">')
+    // for(i=0;i<array.length;i++){
+    //     document.write('<tr>')
+    //     document.write("<td><b>Estado "+i+ "</b></td>")
+    //     for(j=0;j<array[i].length;j++){
+    //         document.write("<td>"+ array[i][j] + "</td>")
+    //     }
+    //     document.write("</tr>")
+    // }
+    // document.write("</table>")
+
+
+    console.log(array)
+    console.log(array.reverse())
 
 })
