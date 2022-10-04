@@ -73,6 +73,9 @@ class Libro{
     setAutor(a){
         this.autor = a
     }
+    getAutor(){
+        return this.autor
+    }
     setPaginas(p){
         this.npaginas = p
     }
@@ -99,17 +102,26 @@ var biblioteca = {
     },
     //falta por hacer
     sacarLibro : function(l){
+        let i = 0
         estado = false
         for (v of this.Volumenes){
+            i++
             if (v.getTitulo() == l.getTitulo()){
                 estado = true;
-                console.log("encontrado")
-                //FALTA SACAR LIBRO
+                let indice = i-1
+                console.log(`Libro con índice ${indice} eliminado con éxito`)
+                this.Volumenes.splice(indice,1) //solo queremos eliminar un único volumen desde el indice especificado
             }
         }
+    },
+    consultaAutor : function(l){
+        return l.getAutor()
     }
 }
 
 biblioteca.insertarLibro(l1)
+biblioteca.insertarLibro(l2)
+biblioteca.insertarLibro(l3)
 biblioteca.verLibros()
-biblioteca.sacarLibro(l1)
+biblioteca.sacarLibro(l2)
+console.log(biblioteca.consultaAutor(l3))
