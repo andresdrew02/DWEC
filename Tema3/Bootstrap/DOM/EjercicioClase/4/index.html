@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú desplegable</title>
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style-type: none;
+            font-family: sans-serif;
+
+        }
+
+        #menu li a {
+            display: block;
+            color: black;
+            padding: .5em;
+        }
+
+        #menu>ul>li>a {
+            background: #C8FFAD;
+        }
+
+        #menu li ul {
+            background: #E4ADFF;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="#" class="menu">Item 1</a>
+                <ul>
+                    <li><a href="#">Opción 1</a></li>
+                    <li><a href="#">Opción 2</a></li>
+                    <li class="separador"></li>
+                    <li><a href="#">Opción 3</a></li>
+                    <li><a href="#">Opción 4</a></li>
+                    <li><a href="#">Opción 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu">Item 2</a>
+                <ul>
+                    <li><a href="#">Opción 1</a></li>
+                    <li class="separador"></li>
+                    <li><a href="#">Opción 2</a></li>
+                    <li><a href="#">Opción 3</a></li>
+                    <li><a href="#">Opción 4</a></li>
+                    <li><a href="#">Opción 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu">Item 3</a>
+                <ul>
+                    <li><a href="#">Opción 1</a></li>
+                    <li><a href="#">Opción 2</a></li>
+                    <li><a href="#">Opción 3</a></li>
+                    <li class="separador"></li>
+                    <li><a href="#">Opción 4</a></li>
+                    <li><a href="#">Opción 5</a></li>
+                    <li class="separador"></li>
+                    <li><a href="#">Opción 1</a></li>
+                    <li><a href="#">Opción 2</a></li>
+                    <li><a href="#">Opción 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+<script src="./index.js"></script>
+</html>
