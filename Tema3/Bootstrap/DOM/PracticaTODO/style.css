@@ -1,0 +1,17 @@
+li{
+    border:1px solid black;
+    color:blue;
+    margin-top:10px;
+    list-style-type:none;
+    margin-left:-2rem;
+    display:flex;
+    justify-content: space-between;
+}
+
+li i{
+    margin-right:10px;
+}
+
+.completado{
+    color:red;
+}

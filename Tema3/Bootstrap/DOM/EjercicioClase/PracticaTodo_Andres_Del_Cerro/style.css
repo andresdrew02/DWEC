@@ -1,0 +1,41 @@
+.alert:hover{
+    background-color:rgb(255, 142, 98);
+    color:white;
+    cursor:pointer;
+}
+
+.completado{
+    font-weight:bold;
+    text-decoration:line-through;
+    background-color:#f25757;
+    color:white;
+}
+
+#tareas{
+    margin-top:50px;
+}
+
+i{
+    cursor:pointer;
+    margin-left:10px;
+    transition:all 0.1s;
+}
+
+i:hover{
+    transform:scale(1.3);
+}
+
+.fa-check-circle:hover{
+    color:green;
+}
+.fa-times-circle:hover{
+    color:red;
+}
+
+.completado .fa-check-circle:hover{
+    color:lime;
+}
+
+.completado .fa-times-circle:hover{
+    color:#870505;
+}
