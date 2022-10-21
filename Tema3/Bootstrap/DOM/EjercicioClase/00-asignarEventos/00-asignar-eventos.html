@@ -7,29 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script>
-    function conseguirCoordenadas(){
-        addEventListener("click",function(p){
-            document.getElementById("x").value= p.pageX
-            document.getElementById("y").value = p.pageY
-        })
-    }
-</script>
 <body>
 
     <!-- de este modo podemos asignar un código  -->
     <button onmouseover="alert('has pasado por encima del botón')">Pasa por encima</button>
 
-    <button id="btn1" onclick="alert('me has dado click!')">Púlsame</button>
-    <button id="btn2" onmouseleave="alert('no te vayas')">Entra y sal</button>
-    <button id="btn3" onmouseenter="alert('estas encima')">Ponte encima</button>
-    <button id="btn4" onclick="conseguirCoordenadas()">Coordenadas</button>
+    <button id="btn1">Púlsame</button>
+    <button id="btn2">Entra y sal</button>
+    <button id="btn3">Ponte encima</button>
+    <button id="btn4">Coordenadas</button>
     
     <label for="x">X: </label>
     <input id="x" name="x" type="text">
 
     <label for="x">Y: </label>
     <input id="y" name="y" type="text">
+
+    <script>
+        let btn01 = document.getElementById("btn1")
+        let btn02 = document.getElementById("btn2")
+        let btn03 = document.getElementById("btn3")
+        let btn04 = document.getElementById("btn4")
+        let xInput = document.getElementById("x")
+        let yInput = document.getElementById("y")
+
+        btn01.addEventListener("click",()=>alert("me has dado click"))
+        btn02.addEventListener("mouseleave",()=>alert("no te vayas"))
+        btn03.addEventListener("mouseenter",()=>alert("Estas encima"))
+        btn04.addEventListener("click",(e)=>inputCoordenadas(e))
+    
+        function inputCoordenadas(e){
+            xInput.value = e.clientX
+            yInput.value = e.clientY
+        }
+
+        //document.addEventListener("mousemove",(e)=>inputCoordenadas(e))
+        
+    </script>
 </body>
 
 </html>

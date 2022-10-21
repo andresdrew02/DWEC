@@ -55,17 +55,8 @@
     <script>
         let parrafos = document.querySelectorAll(".parrafo")
 
-        function randomNumber(){
-            return Math.random()*255
-        }
-
-        function cambiarColor(e,r,g,b){
-            e.style.backgroundColor=`rgb(${r},${g},${b})`
-        }
-
-
         parrafos.forEach((e)=>{
-            e.addEventListener("mouseenter",(e)=>cambiarColor(e.target,randomNumber(),randomNumber(),randomNumber()))
+            e.addEventListener("click",(e)=>e.target.remove())
         })
     </script>
 
