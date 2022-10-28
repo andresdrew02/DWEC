@@ -31,11 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 contador_tareas++
             })
         }
-
+        
         //Si se pulsa el botón el flujo del script va por "controlador_boton"
         buttonEl.addEventListener("click", function () {
             controlador_boton()
         })
+
+        //prevenir el submit del formulario
+        document.getElementById("formulario").addEventListener("submit",e=>e.preventDefault())
     }
 
     function controlador_boton() {
