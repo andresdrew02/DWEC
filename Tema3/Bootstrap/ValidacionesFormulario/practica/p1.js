@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     //TODO
     function validarPassword(password){
-        const regexp = /^([\w|\d|@|\||-|.|,|;|:|?|]{8,10})$/i
+        const regexp = /^(((?=.*[a-z])(?=.*[A-Z]))((?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]))((?=.*[A-Z])(?=.*[0-9])))(?=.{8,10})/
         const listaSimbolos = "@|-.,;:?¿¡!$%&/()/|"
         console.log(regexp.test("Password1@"))
     }
