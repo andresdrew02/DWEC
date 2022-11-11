@@ -17,15 +17,21 @@ document.addEventListener("DOMContentLoaded",function(){
         const regexp = /^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/
         return regexp.test(username)
     }
-    //TODO
+
     function validarPassword(password){
-        const regexp = /^(((?=.*[a-z])(?=.*[A-Z]))((?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]))((?=.*[A-Z])(?=.*[0-9])))(?=.{8,10})/
-        const listaSimbolos = "@|-.,;:?¿¡!$%&/()/|"
-        console.log(regexp.test("Password1@"))
+        //min 8 longitud,1caracter mayuscula o minuscula y un alfanumérico
+        const regexp = /^(((?=.*[a-z|A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]))(?=.*[0-9]))(?=.{8,10})/
+        return regexp.test(password)
     }
 
+    //TODO
+    function validarEmail(email){
+
+    }
+    
+
     function testfn(){
-        validarPassword()
+
     }
 
     testfn()
