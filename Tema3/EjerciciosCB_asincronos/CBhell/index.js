@@ -27,7 +27,7 @@ function descargar(url, cb) {
 //   });
 // });
 
-//El CB HELL lo evitamos con proemsas
+//El CB HELL lo evitamos con promesas
 
 let promise = new Promise(
     (resolve,reject)=>{

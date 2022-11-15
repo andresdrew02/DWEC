@@ -1,0 +1,15 @@
+.gradient-custom {
+    background: #6a11cb;
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+}
+
+.error{
+    border:2px solid red;
+    outline: red;
+}
+
+.error_message{
+    font-size:0.9rem;
+    color:red;
+}
