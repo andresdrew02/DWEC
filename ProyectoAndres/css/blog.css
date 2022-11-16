@@ -142,3 +142,7 @@ nav ul{
     text-decoration: underline;
     color:rgb(0, 132, 255);
 }
+
+.pagination li{
+    cursor:pointer;
+}

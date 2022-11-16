@@ -3,6 +3,7 @@ const usuariosActioner = document.getElementById("usuarios")
 const userUrl = "https://jsonplaceholder.typicode.com/users"
 const postUrl = "https://jsonplaceholder.typicode.com/posts?userId="
 const useridUrl = "https://jsonplaceholder.typicode.com/users?id="
+const postsUrl = "https://jsonplaceholder.typicode.com/posts/"
 const tableDisplay = document.getElementById("table-body")
 const tableEl = document.querySelector("table")
 const postsEl = document.querySelector(".posts")
@@ -283,3 +284,25 @@ function getUserStructure(user) {
     `
 }
 
+//-----------------------------
+
+async function getAllPosts(){
+  borrarUsuario()
+  borrarPosts()
+
+  let posts = await (await fetch(postsUrl)).json()
+  postsEl.style.display = "flex"
+  posts.forEach(e => {
+    procesarUsuario(e.userId,(u)=>{
+      pintaPost(getPostStructure(e,u))
+    })
+  })
+}
+
+async function procesarUsuario(id,cb){
+  let user = buscarUsuario(id).then(u => cb(u))
+}
+
+postsActioner.addEventListener("click",()=>{
+  getAllPosts()
+})
