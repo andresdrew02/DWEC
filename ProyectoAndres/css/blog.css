@@ -5,40 +5,38 @@
 body{
     background-color:rgb(39, 39, 39);
 }
-.navbar{
-    width:100%;
+
+nav{
     height:100px;
-   
-    display:flex;
-    border-bottom: 1px solid ;
-    flex-direction:column;
     background-color:rgb(27, 27, 27);
     border-bottom:2px solid black;
+    display:flex;
 }
 
-.navbar ul,li{
+nav ul,li{
     color:white;
     font-size:1.4rem;
     display:inline-block;
     list-style: none;
     margin-left:50px;
+    margin-bottom:15px;
 }
 
 i{
     margin-right:7px;
 }
 
-.navbar ul li{
+nav ul li{
     cursor: pointer;
     transition:all 0.1s;
 }
 
-.navbar ul li:hover{
+nav ul li:hover{
     transform:scale(1.1);
     color:rgb(197, 197, 197);
 }
 
-.navbar ul{
+nav ul{
     margin-left:-75px;
     height:100%;
     display:flex;
@@ -50,4 +48,97 @@ i{
 
 .oculto{
     display:none;
+}
+
+.post{
+    color:white;
+    background-color: rgb(48, 48, 48);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
+    height:250px;
+    display:flex;
+    margin-top:20px;
+}
+
+.posts{
+    font-size:1.1rem;
+    margin-left:50px;
+    width:90%;
+    display:none;
+    flex-direction: column;
+}
+
+.post_body label{
+    font-size:1.4rem;
+    font-weight: bold;
+}
+
+.post_body{
+    margin-left:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post_header{
+    display:flex;
+    align-items: center;
+    width:500px;
+    border-right:2px solid rgb(31, 31, 31);
+}
+
+.posts h3{
+    color:white;
+}
+
+.posts h3 i{
+    color:rgb(175, 175, 175);
+    font-size:1.4rem;
+    font-weight: normal;
+}
+
+.page-item{
+    margin:0px;
+    margin-top:20px;
+}
+
+.main-body {
+    padding: 15px;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(44, 44, 44);
+    color:white;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.user{
+    margin:20px;
+}
+
+.user h1{
+    color :white;
+    font-size:1.8rem;
+    text-align: center;
+    margin-bottom:50px;
+}
+
+.nombre_usuario{
+    cursor: pointer;
+}
+
+.post_content i{
+    font-size:1.4rem;
+    cursor:pointer;
+    font-style:normal;
+    text-decoration: underline;
+    color:rgb(0, 132, 255);
 }

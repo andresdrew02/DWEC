@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>AndresSite | Blog</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!--Font awesome-->
-    <script
-      src="https://kit.fontawesome.com/84a45588bb.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/blog.css" />
-    <script defer src="../js/blog.js"></script>
-    <link rel="icon" href="./img/logo.png" />
-  </head>
 
-  <body>
-    <div class="navbar">
-      <img src="../img/peppo.png" style="width: 165px; height: 90px" />
-      <ul>
-        <li id="posts"><i class="fa-regular fa-paste"></i>Posts</li>
-        <li id="usuarios"><i class="fa-regular fa-circle-user"></i>Usuarios</li>
-      </ul>
-    </nav class="navbar">
+<head>
+  <title>AndresSite | Blog</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--Font awesome-->
+  <script src="https://kit.fontawesome.com/84a45588bb.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/blog.css" />
+  <script defer src="../js/blog.js"></script>
+  <link rel="icon" href="./img/logo.png" />
+</head>
+
+<body>
+  <nav>
+    <img src="../img/peppo.png" style="width: 165px; height: 90px" />
+    <ul>
+      <li id="posts"><i class="fa-regular fa-paste"></i>Posts</li>
+      <li id="usuarios"><i class="fa-regular fa-circle-user"></i>Usuarios</li>
+    </ul>
+  </nav>
+
+
+  <div class="content">
+    <div class="usuarios">
+      <table class="table table-dark table-striped oculto">
+        <thead class="thead-white">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre de usuario</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Posts</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
     </div>
+  </div>
 
-    <div class="content">
-      <div class="usuarios">
-        <table class="table table-dark table-striped oculto">
-          <thead class="thead-white">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre de usuario</th>
-              <th scope="col">Nombre completo</th>
-              <th scope="col">Email</th>
-              <th scope="col">Posts</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <footer>
-      <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
+  <section class="posts">
+    
+  </section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <!--Plantilla de nombre de usuario sacada de internet https://www.bootdey.com/snippets/view/profile-with-data-and-skills#css-->
+  <section class="user">
+    
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
