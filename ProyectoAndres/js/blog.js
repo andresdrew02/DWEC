@@ -1,3 +1,4 @@
+//definición de variables y recuperación de elementos DOM necesarios
 const postsActioner = document.getElementById("posts")
 const usuariosActioner = document.getElementById("usuarios")
 const userUrl = "https://jsonplaceholder.typicode.com/users"
@@ -9,8 +10,10 @@ const tableEl = document.querySelector("table")
 const postsEl = document.querySelector(".posts")
 const userEl = document.querySelector(".user")
 
+//para no poder mostrar los mismos users 2 veces.
 let usersMostrado = false
 
+//recoge una lista de usuarios de la api y despues usa la fn pintaUsuarios para mostrarlos por pantalla
 async function getUsers() {
     try {
         const userList = await fetch(userUrl)
@@ -37,6 +40,7 @@ function ocultarTabla() {
     tableEl.classList.add("oculto")
 }
 
+//para cada usuario se procesa para conseguir su estructura html y se añade a la página modificando el innerHTML
 function pintaUsuarios(listaUsers) {
     listaUsers.forEach(e => {
         let htmlStructure = getUsersStructure(e.id, e.username, e.name, e.email)
@@ -56,6 +60,7 @@ function getUsersStructure(id, user, fullname, email) {
     `
 }
 
+//eventListener para mostrar los usuarios
 usuariosActioner.addEventListener("click", () => {
     if (!usersMostrado) {
         desocultarTabla()
@@ -63,12 +68,16 @@ usuariosActioner.addEventListener("click", () => {
     }
 })
 
-//-------------------------------------
 
+//fn para obtener posts paginados por id de usuario, por defecto los 5 primeros
 async function obtenerPosts(id, start = 0, end = 5) {
     borrarPosts()
     borrarUsuario()
 
+    //consigue la lista de los posts, cuando termina ese proceso, se consigue el objeto usuario y despues
+    //cada elemento es pasado a la función getPostStructure junto al objeto usuario y despues de pinta
+    //una vez termina este pintado, se añade el encabezado, como es un proceso asincrono, primero se tiene
+    //que esperar a los postsLists, luego al user, y despues ya de forma lineal se pinta los posts y se añaden los encabezados
     try {
         const postLists = await (await fetch(`${postUrl}${id}&_start=${start}&_end=${end}`)).json()
         const user = await buscarUsuario(id)
@@ -77,21 +86,15 @@ async function obtenerPosts(id, start = 0, end = 5) {
             pintaPost(getPostStructure(e,user))
         })
         anyadirEncabezado(user.id,5)
-        
-
-
     }
     catch (e) {
         console.log(e)
     }
 }
 
-
 function pintaPost(post){
     postsEl.innerHTML += post
 }
-
-
 
 function borrarPosts() {
     postsEl.innerHTML = ""
@@ -107,7 +110,6 @@ function anyadirEncabezado(userId, end) {
             </ul>
             `
 }
-
 
 function getPostStructure(post, user) {
     return `
@@ -130,18 +132,17 @@ function getPostStructure(post, user) {
         `
 }
 
-// --------------------------------------------------
-
 function borrarUsuario() {
     userEl.innerHTML = ""
 }
 
+//fn para gestionar la promesa de buscarUsuario, despues de la respuesta se pasa a pintaUsuario
 async function obtenerUsuario(id) {
     let user = await buscarUsuario(id, pintaUsuario)
     pintaUsuario(user)
-    
 }
 
+//devuelve una promesa que cuando se resuelve devuelve al usuario
 async function buscarUsuario(id) {
     try {
         return await fetch(useridUrl + id)
@@ -284,25 +285,28 @@ function getUserStructure(user) {
     `
 }
 
-//-----------------------------
-
+//fn para recuperar todos los posts de la API
 async function getAllPosts(){
   borrarUsuario()
   borrarPosts()
 
   let posts = await (await fetch(postsUrl)).json()
   postsEl.style.display = "flex"
+  //para cada post se procesa garcias a procesarPost y al cb que una vez resuelta la promesa del usuario,
+  //se consigue la estructura del post y se pinta por pantalla
   posts.forEach(e => {
-    procesarUsuario(e.userId,(u)=>{
+    procesarPost(e.userId,(u)=>{
       pintaPost(getPostStructure(e,u))
     })
   })
 }
 
-async function procesarUsuario(id,cb){
+//funcion que recupera un usuario y el usuario es procesado por un cb
+async function procesarPost(id,cb){
   let user = buscarUsuario(id).then(u => cb(u))
 }
 
+//Listener para el botón "usuarios"
 postsActioner.addEventListener("click",()=>{
   getAllPosts()
 })
