@@ -7,19 +7,19 @@ body{
 }
 
 nav{
-    height:100px;
     background-color:rgb(27, 27, 27);
     border-bottom:2px solid black;
     display:flex;
+    height:100px;
 }
 
 nav ul,li{
     color:white;
-    font-size:1.4rem;
     display:inline-block;
+    font-size:1.4rem;
     list-style: none;
-    margin-left:50px;
     margin-bottom:15px;
+    margin-left:50px;
 }
 
 i{
@@ -32,18 +32,18 @@ nav ul li{
 }
 
 nav ul li:hover{
-    transform:scale(1.1);
     color:rgb(197, 197, 197);
+    transform:scale(1.1);
 }
 
 nav ul{
-    margin-left:-75px;
-    height:100%;
-    display:flex;
-    width:100%;
-    justify-content: flex-start;
     align-items:center;
+    display:flex;
+    height:100%;
+    justify-content: flex-start;
+    margin-left:-75px;
     margin-top:10px;
+    width:100%;
 }
 
 .oculto{
@@ -51,20 +51,20 @@ nav ul{
 }
 
 .post{
-    color:white;
     background-color: rgb(48, 48, 48);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
-    height:250px;
+    color:white;
     display:flex;
+    height:250px;
     margin-top:20px;
 }
 
 .posts{
+    display:none;
+    flex-direction: column;
     font-size:1.1rem;
     margin-left:50px;
     width:90%;
-    display:none;
-    flex-direction: column;
 }
 
 .post_body label{
@@ -73,17 +73,17 @@ nav ul{
 }
 
 .post_body{
-    margin-left:20px;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    margin-left:20px;
 }
 
 .post_header{
-    display:flex;
     align-items: center;
-    width:500px;
     border-right:2px solid rgb(31, 31, 31);
+    display:flex;
+    width:500px;
 }
 
 .posts h3{
@@ -97,8 +97,8 @@ nav ul{
 }
 
 .page-item{
-    margin:0px;
     margin-top:20px;
+    margin:0px;
 }
 
 .main-body {
@@ -106,12 +106,12 @@ nav ul{
 }
 
 .card {
+    background-color: rgb(44, 44, 44);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
-    position: relative;
+    color:white;
     display: flex;
     flex-direction: column;
-    background-color: rgb(44, 44, 44);
-    color:white;
+    position: relative;
 }
 
 .card-body {
@@ -127,8 +127,8 @@ nav ul{
 .user h1{
     color :white;
     font-size:1.8rem;
-    text-align: center;
     margin-bottom:50px;
+    text-align: center;
 }
 
 .nombre_usuario{
@@ -136,11 +136,11 @@ nav ul{
 }
 
 .post_content i{
-    font-size:1.4rem;
+    color:rgb(0, 132, 255);
     cursor:pointer;
+    font-size:1.4rem;
     font-style:normal;
     text-decoration: underline;
-    color:rgb(0, 132, 255);
 }
 
 .pagination li{
