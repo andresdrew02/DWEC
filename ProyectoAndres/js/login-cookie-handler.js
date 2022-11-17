@@ -28,6 +28,8 @@ async function checkServerCookie(cookie){
             if (!document.URL.includes("blog.html")) {
                 window.open("./sites/blog.html","_self").document.cookie = document.cookie
             }
+        }else{
+            deleteCookie()
         }
     }else{
         deleteCookie()
@@ -44,16 +46,13 @@ function getId(cookie){
 async function deleteServerCookie(cookie){
     const cookieObject = await getId(cookie)
     const cookieId = cookieObject[0].id
-    fetch(`https://api-generator.retool.com/JpTwp0/proyectoandres/${cookieId}`, {
+    const response = await fetch(`https://api-generator.retool.com/JpTwp0/proyectoandres/${cookieId}`, {
     method: "DELETE"
     })
-    .then(r=>r.json())
-    .then(r=>{
-        if (r.ok){
-            deleteCookie()
-            window.open("../index.html","_self").document.cookie = "sessId" +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        }
-    })
+    if (response.ok){
+        deleteCookie()
+        window.open("../index.html","_self").document.cookie = "sessId" +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
 }
 
 function cerrarSesion(){
