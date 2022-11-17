@@ -12,48 +12,6 @@ function checkBlank(string){
     return false
 }
 
-//metodo de internet, hehe
-function genCookie(length=25){
-    let result           = '';
-    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for ( let i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-}
-
-function setCookie(){
-    document.cookie = "sessId="
-}
-
-async function createCookie(){
-    const d = new Date()
-    d.setHours(d.getHours+3)
-    const cookie = genCookie()
-    document.cookie = `sessId=${cookie}; expires=${d.toUTCString()}`
-    
-    const idresponse = await getId()
-    const id = idresponse.length+1
-    console.log(await createServerCookie(id,cookie))
-}
-
-function getId(){
-    const response = fetch("https://api-generator.retool.com/JpTwp0/proyectoandres").then(r=>r.json())
-    return response
-}
-
-function createServerCookie(id,cookie){
-    const response = fetch("https://api-generator.retool.com/JpTwp0/proyectoandres", {
-    body: `{"id":"${id}","sessId":"${cookie}"}`,
-    headers: {
-        "Content-Type": "application/json"
-    },
-    method: "POST"
-    }).then(r=>r.json())
-    return response
-}
-
 function resetErrores(){
     userEl.classList.remove("error")
     userDisplayer.innerHTML = ""
