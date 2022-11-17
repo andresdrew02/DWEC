@@ -9,6 +9,7 @@ const tableDisplay = document.getElementById("table-body")
 const tableEl = document.querySelector("table")
 const postsEl = document.querySelector(".posts")
 const userEl = document.querySelector(".user")
+const logout = document.getElementById("logout")
 
 //para no poder mostrar los mismos users 2 veces.
 let usersMostrado = false
@@ -309,4 +310,9 @@ async function procesarPost(id,cb){
 //Listener para el botón "usuarios"
 postsActioner.addEventListener("click",()=>{
   getAllPosts()
+})
+
+//invocamos una función de "login-cookie-handker.js"
+logout.addEventListener("click",()=>{
+  cerrarSesion()
 })
