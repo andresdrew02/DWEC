@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:rgb(39, 39, 39);
+}
+
+nav{
+    background-color:rgb(27, 27, 27);
+    border-bottom:2px solid black;
+    display:flex;
+    height:100px;
+}
+
+nav ul,li{
+    color:white;
+    display:inline-block;
+    font-size:1.4rem;
+    list-style: none;
+    margin-bottom:15px;
+    margin-left:50px;
+}
+
+i{
+    margin-right:7px;
+}
+
+nav ul li{
+    cursor: pointer;
+    transition:all 0.1s;
+}
+
+nav ul li:hover{
+    color:rgb(197, 197, 197);
+    transform:scale(1.1);
+}
+
+nav ul{
+    align-items:center;
+    display:flex;
+    height:100%;
+    justify-content: flex-start;
+    margin-left:-75px;
+    margin-top:10px;
+    width:100%;
+}
+
+.oculto{
+    display:none;
+}
+
+.post{
+    background-color: rgb(48, 48, 48);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
+    color:white;
+    display:flex;
+    height:250px;
+    margin-top:20px;
+}
+
+.posts{
+    display:none;
+    flex-direction: column;
+    font-size:1.1rem;
+    margin-left:50px;
+    width:90%;
+}
+
+.post_body label{
+    font-size:1.4rem;
+    font-weight: bold;
+}
+
+.post_body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:20px;
+}
+
+.post_header{
+    align-items: center;
+    border-right:2px solid rgb(31, 31, 31);
+    display:flex;
+    width:500px;
+}
+
+.posts h3{
+    color:white;
+}
+
+.posts h3 i{
+    color:rgb(175, 175, 175);
+    font-size:1.4rem;
+    font-weight: normal;
+}
+
+.page-item{
+    margin-top:20px;
+    margin:0px;
+}
+
+.main-body {
+    padding: 15px;
+}
+
+.card {
+    background-color: rgb(44, 44, 44);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 3px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.user{
+    margin:20px;
+}
+
+.user h1{
+    color :white;
+    font-size:1.8rem;
+    margin-bottom:50px;
+    text-align: center;
+}
+
+.nombre_usuario{
+    cursor: pointer;
+}
+
+.post_content i{
+    color:rgb(0, 132, 255);
+    cursor:pointer;
+    font-size:1.4rem;
+    font-style:normal;
+    text-decoration: underline;
+}
+
+.pagination li{
+    cursor:pointer;
+}
